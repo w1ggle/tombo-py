@@ -23,13 +23,13 @@ labels = [['fr', 'fl'], ['rr', 'rl']]
 
     # Enable/disble plotting for each category
     [plotting.plot_enabled]
-    mesh2d = true
-    mesh3d = true
-    airfoil_vel = true
-    GAMA = true
-    wake = true
+    mesh2d = false
+    mesh3d = false
+    airfoil_vel = false
+    GAMA = false
+    wake = false
     force = true
-    moment = true
+    moment = false
 
 
 [time]
@@ -65,7 +65,7 @@ acamber = 0.2
 # Ratio of border element height to wing chord length (front)
 hfactor_f = 0.1
 # Ratio of border element width to border element height (front)
-wfactor_f = 3
+wfactor_f = 2
 # Ratio of border element height to wing chord length (rear)
 hfactor_r = 0.1
 # Ratio of border element width to border element height (rear)
