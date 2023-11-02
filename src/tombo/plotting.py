@@ -279,7 +279,13 @@ def plot_force(times, force, *, filename, save):
     fig = plt.figure()
     plt.plot(times, force, 'x-k')
     plt.grid(True)
-
+    
+    """
+    adding vertical lines to show the periods
+    """
+    for i in range(0,4):
+        plt.axvline(x = 0.333 * i)
+    
     if save:
         plt.savefig(f'{g.plot_folder}/force/{filename}.png')
         plt.close(fig)

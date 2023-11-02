@@ -36,7 +36,7 @@ labels = [['fr', 'fl'], ['rr', 'rl']]
 # Time increment
 dt = 0.01
 # Number of time steps to iterate through
-nstep = 60
+nstep = 100
 
 
 [body_geometry]
@@ -99,7 +99,7 @@ a_ = [0.0, 0.0, 0.0, 0.0]
 # Stroke plane angle in degrees wrt the body axis
 beta_ = [90.0, 90.0, 90.0, 90.0]
 # Flapping frequency in Hz
-f_ = [60.0, 60.0, 60.0, 60.0]
+f_ = [30.0, 30.0, 30.0, 30.0]
 # Max rotation amplitude in degrees; actual rotation is 2 * gMax_
 gMax_ = [30.0, 30.0, 30.0, 30.0]
 # Rotation speed parameter (nondimensional); must be >= 4
