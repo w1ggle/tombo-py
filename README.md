@@ -6,6 +6,7 @@
 
 Clone the repo and run the following commands in the directory (it is highly recommended that you use a Python virtual environment):
 
+WILL NOT WORK WITH PYTHON 3.12, THE LATEST VERSION THAT WORKS IS 3.11.6 
 ```shell
 pip install -r requirements.txt
 python3 -m build
