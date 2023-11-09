@@ -23,20 +23,20 @@ labels = [['fr', 'fl'], ['rr', 'rl']]
 
     # Enable/disble plotting for each category
     [plotting.plot_enabled]
-    mesh2d = true
-    mesh3d = true
-    airfoil_vel = true
-    GAMA = true
-    wake = true
+    mesh2d = false
+    mesh3d = false
+    airfoil_vel = false
+    GAMA = false
+    wake = false
     force = true
-    moment = true
+    moment = false
 
 
 [time]
 # Time increment
-dt = 0.01
+dt = 0.001
 # Number of time steps to iterate through
-nstep = 100
+nstep = 240
 
 
 [body_geometry]
