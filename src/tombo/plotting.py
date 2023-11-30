@@ -283,9 +283,10 @@ def plot_force(times, force, *, filename, save):
     """
     adding vertical lines to show the periods
     """
-    numPeriods =  round((g.nstep * g.dt) / (1/ 30))
+    periodLen = 1/30
+    numPeriods =  round((g.nstep * g.dt) / periodLen)
     for i in range(0,numPeriods):
-        plt.axvline(x = 0.0333 * i)
+        plt.axvline(x = periodLen * i)
     
     if save:
         plt.savefig(f'{g.plot_folder}/force/{filename}.png')
