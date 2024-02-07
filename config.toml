@@ -4,7 +4,9 @@
 # - backslash (True)
 solver = false
 # Toggle output data being saved (disable for testing)
-save_data = true
+save_data = false 
+#flushes the output directories. If not, old plots will remain
+flush_directories = true
 
 
 [plotting]
@@ -23,10 +25,10 @@ labels = [['fr', 'fl'], ['rr', 'rl']]
 
     # Enable/disble plotting for each category
     [plotting.plot_enabled]
-    mesh2d = true
-    mesh3d = true
-    airfoil_vel = true
-    GAMA = true
+    mesh2d = false
+    mesh3d = false
+    airfoil_vel = false
+    GAMA = false
     wake = true
     force = true
     moment = true
@@ -36,7 +38,7 @@ labels = [['fr', 'fl'], ['rr', 'rl']]
 # Time increment
 dt = 0.1
 # Number of time steps to iterate through
-nstep = 4
+nstep = 2
 
 
 [body_geometry]
@@ -99,6 +101,7 @@ a_ = [0.0, 0.0, 0.0, 0.0]
 # Stroke plane angle in degrees wrt the body axis
 beta_ = [90.0, 90.0, 90.0, 90.0]
 # Flapping frequency in Hz
+# ['fr', 'fl'], ['rr', 'rl'] notes for myself
 f_ = [30.0, 30.0, 30.0, 30.0]
 # Max rotation amplitude in degrees; actual rotation is 2 * gMax_
 gMax_ = [30.0, 30.0, 30.0, 30.0]
@@ -131,7 +134,7 @@ mpath = [0, 0, 0, 0]
 rho_ = 0.001225
 # Ambient velocity in (x, y, z); can be interpreted as the flight velocity
 # when the wind is calm
-U_ = [100.0, 0.0, 0.0]
+U_ = [0.0, 0.0, 0.0]
 
 
 [tolerance]

@@ -3,6 +3,7 @@ from shutil import copyfile
 
 import tombo.globals as g
 from tombo.plotting import create_directories
+from tombo.plotting import delete_directories
 from tombo.symmetric_5_sided_mesh import symmetric_5_sided_mesh
 from tombo.nd_data import nd_data
 from tombo.wing_total import wing_total
@@ -117,7 +118,8 @@ def simulate():
     MVNs_f = lr_set_matrix(xt_f, nxt_f, xC_f, nC_f, g.RCUT)
     MVNs_r = lr_set_matrix(xt_r, nxt_r, xC_r, nC_r, g.RCUT)
 
-    for istep in range(g.nstep):       
+    for istep in range(g.nstep):   
+          
         t = istep * g.dt
 
         # Get wing motion parameters
@@ -319,6 +321,9 @@ def simulate():
                      limpw_f, limpw_r, aimpw_f, aimpw_r)
 
 def run_simulation():
+    if g.flush_directories: #delete directories
+        delete_directories(g.data_folder)
+        
     create_directories(g.data_folder)
     copyfile('config.toml', f'{g.output_folder}/config.toml')
     simulate()

@@ -9,7 +9,7 @@ with open('config.toml', mode='rb') as file:
 
 solver = config['general']['solver']
 save_data = config['general']['save_data']
-
+flush_directories = config['general']['flush_directories']
 
 # Plotting
 # --------

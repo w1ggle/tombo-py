@@ -3,6 +3,8 @@ import sys
 from multiprocessing import Pool
 from pathlib import Path
 
+
+import shutil
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -230,7 +232,8 @@ def plot_wake(nXb_f, nXw_f, Xb_f, Xw_f, nXb_r, nXw_r, Xb_r, Xw_r, *, filename, s
         If `False`, open plot in interactive viewer.
     """
     fig = plt.figure()
-    ax = fig.add_subplot(projection='3d')
+    ax = fig.add_subplot(projection='3d') #setting axes to 3d
+
 
     plot_wing_set(ax, nXb_f, nXw_f, Xb_f, Xw_f)
     plot_wing_set(ax, nXb_r, nXw_r, Xb_r, Xw_r)
@@ -317,7 +320,10 @@ plotting_funcs = {
     'force': plot_force,
     'moment': plot_moment
 }
-
+def delete_directories(base_path):
+    # os.rmdir(base_path)
+    shutil.rmtree(base_path)
+    
 def create_directories(base_path):
     os.makedirs(base_path, exist_ok=True)
     base_dir = Path(base_path)
