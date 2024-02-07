@@ -322,7 +322,7 @@ plotting_funcs = {
 }
 def delete_directories(base_path):
     # os.rmdir(base_path)
-    shutil.rmtree(base_path)
+    shutil.rmtree(base_path, ignore_errors=True) 
     
 def create_directories(base_path):
     os.makedirs(base_path, exist_ok=True)

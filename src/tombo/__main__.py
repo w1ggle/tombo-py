@@ -11,7 +11,7 @@ def generate_plots2(parser, args):
     if not os.path.isdir(args.data_folder):
         parser.exit("Invalid data folder path")
 
-    create_directories(g.plot_folder)
+    create_directories(g.plot_folder)                #can be merged
     generate_plots(args.data_folder, args.all)
 
 def view_plot2(parser, args):
@@ -22,7 +22,7 @@ def view_plot2(parser, args):
 
 def sim_and_plot(parser, args):
     run_simulation()
-    create_directories(g.plot_folder)
+    create_directories(g.plot_folder)               #can be merged
     generate_plots(g.data_folder, args.all)
 
 def init_parsers():
