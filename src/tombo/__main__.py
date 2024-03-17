@@ -3,6 +3,7 @@ import argparse
 import tombo.globals as g
 from tombo.simulate import run_simulation
 from tombo.plotting import create_directories, generate_plots, view_plot
+import time
 
 def tombo2(parser, args):
     run_simulation()
@@ -78,9 +79,11 @@ def init_parsers():
     return global_parser
 
 def main():
+    start_time = time.time()
     parser = init_parsers()
     args = parser.parse_args()
     args.func(parser, args)
+    print("--- %s seconds ---" % (time.time() - start_time))
 
 if __name__ == '__main__':
     main()

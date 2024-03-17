@@ -7,6 +7,7 @@ from pathlib import Path
 import shutil
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib
 
 import tombo.globals as g
 
@@ -232,7 +233,11 @@ def plot_wake(nXb_f, nXw_f, Xb_f, Xw_f, nXb_r, nXw_r, Xb_r, Xw_r, *, filename, s
         If `False`, open plot in interactive viewer.
     """
     fig = plt.figure()
-    ax = fig.add_subplot(projection='3d') #setting axes to 3d
+    
+    ax = fig.add_subplot(projection='3d') #setting axes to 3d # ithink we can limit axies and effectively zoom in
+    ax.set_ylim(0,.01) 
+    ax.set_zlim(0,.01)
+    
 
 
     plot_wing_set(ax, nXb_f, nXw_f, Xb_f, Xw_f)
@@ -347,6 +352,7 @@ def view_plot(path):
     make_plot(path, save=False)
 
 def generate_plots(dir, all, chunksize=10):
+            
     """Generate and save plot for each data file in dir"""
     # Construct list of all data files in directory
     data_files = []
